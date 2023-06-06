@@ -11,4 +11,5 @@ function Recipe(title, ingredients, instructions) {
   }
   
 
-
+  // Create an array to store the recipes
+const recipes = [];
