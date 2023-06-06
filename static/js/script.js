@@ -13,3 +13,9 @@ function Recipe(title, ingredients, instructions) {
 
   // Create an array to store the recipes
 const recipes = [];
+
+// Function to add a new recipe
+function addRecipe(title, ingredients, instructions) {
+  const recipe = new Recipe(title, ingredients, instructions);
+  recipes.push(recipe);
+}
