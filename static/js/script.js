@@ -45,3 +45,22 @@ function deleteRecipe(index) {
 const addRecipeForm = document.getElementById("add-recipe-form");
 const recipesList = document.getElementById("recipes-list");
 
+// Event listener for the add recipe form submission
+addRecipeForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  // Retrieve input values from the form
+  const title = document.getElementById("title-input").value;
+  const ingredients = document.getElementById("ingredients-input").value.split("\n");
+  const instructions = document.getElementById("instructions-input").value;
+
+  // Call the addRecipe function to add a new recipe
+  addRecipe(title, ingredients, instructions);
+
+  // Clear the form inputs
+  addRecipeForm.reset();
+
+  // Update the recipes list
+  updateRecipesList();
+});
+
