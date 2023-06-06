@@ -64,3 +64,33 @@ addRecipeForm.addEventListener("submit", function(event) {
   updateRecipesList();
 });
 
+// Function to update the recipes list in the UI
+function updateRecipesList() {
+  // Clear the existing list
+  recipesList.innerHTML = "";
+
+  // Loop through the recipes array and display each recipe
+  recipes.forEach(function(recipe, index) {
+    const recipeElement = document.createElement("div");
+    recipeElement.innerHTML = "<h3>" + recipe.title + "</h3>" +
+                              "<p><strong>Ingredients:</strong> " + recipe.ingredients.join(", ") + "</p>" +
+                              "<p><strong>Instructions:</strong> " + recipe.instructions + "</p>" +
+                              "<button class='delete-button btn btn-primary' data-index='" + index + "'>Delete Recipe</button>";
+
+    // Event listener for the delete button
+    const deleteButton = recipeElement.querySelector(".delete-button");
+    deleteButton.addEventListener("click", function() {
+      const index = parseInt(deleteButton.getAttribute("data-index"));
+      deleteRecipe(index);
+      updateRecipesList();
+    });
+
+    // Append the recipe element to the recipes list
+    recipesList.appendChild(recipeElement);
+  });
+}
+
+// Call the updateRecipesList function initially to display any existing recipes
+updateRecipesList();
+
+
