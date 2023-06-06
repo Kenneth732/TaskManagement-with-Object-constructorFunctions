@@ -40,3 +40,8 @@ function deleteRecipe(index) {
 }
 
 
+/////////////////
+// Get references to the form and recipes list
+const addRecipeForm = document.getElementById("add-recipe-form");
+const recipesList = document.getElementById("recipes-list");
+
