@@ -28,3 +28,15 @@ function viewRecipes() {
     console.log("-------------------");
   });
 }
+
+// Function to delete a recipe
+function deleteRecipe(index) {
+  if (index >= 0 && index < recipes.length) {
+    recipes.splice(index, 1);
+    console.log("Recipe deleted successfully.");
+  } else {
+    console.log("Invalid recipe index.");
+  }
+}
+
+
