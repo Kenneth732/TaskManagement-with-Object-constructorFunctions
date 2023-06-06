@@ -19,3 +19,12 @@ function addRecipe(title, ingredients, instructions) {
   const recipe = new Recipe(title, ingredients, instructions);
   recipes.push(recipe);
 }
+
+// Function to view all recipes
+function viewRecipes() {
+  recipes.forEach(function(recipe, index) {
+    console.log("Recipe " + (index + 1));
+    recipe.displayDetails();
+    console.log("-------------------");
+  });
+}
